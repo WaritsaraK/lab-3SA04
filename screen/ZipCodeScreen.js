@@ -18,7 +18,6 @@ const ZipItem = ({place, code, navigation}) => (
         <View style={styles.zipItem}>
             <Text>{place}</Text>
             <Text>{code}</Text>
-
         </View>
     </TouchableHighlight>
 )
@@ -33,7 +32,6 @@ export default function ZipCodeScreen(){
             
         />
     )
-    
 }
 
 const styles = StyleSheet.create({
@@ -41,10 +39,8 @@ const styles = StyleSheet.create({
         flex: 2,
         flexDirection: 'row',
         paddingHorizontal: 20,
-        //paddingVertical: 20,
         justifyContent: 'space-between',
         textAlign: 'center',
-        
     },
     zipPlace: {
         flex: 1,
@@ -54,6 +50,6 @@ const styles = StyleSheet.create({
     },
     touch: {
         padding: 20,
-        backgroundColor: "#E3EBFD",
+        backgroundColor: "#E3EBFD" ,
     }
 })

@@ -4,6 +4,7 @@ import Forecast from "./Forecast";
 
 export default function Weather(props) {
     const [ forecastInfo, setForecastInfo ] = useState({
+        name: 'name',
         main: 'main',
         description: 'description',
         humidity: 0,
@@ -16,7 +17,8 @@ export default function Weather(props) {
             fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=f8a1a1cea99f01b19b0ceea91204f5ce`)                 
                 .then((response) => response.json())                 
                 .then((json) => {                     
-                    setForecastInfo({                         
+                    setForecastInfo({       
+                        name: json.name,                   
                         main: json.weather[0].main,                         
                         description: json.weather[0].description,                         
                         temp: json.main.temp,  
@@ -32,9 +34,9 @@ export default function Weather(props) {
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
             <View style={styles.background}>
-                    <Text style={styles.zipCodeText}>Zip Code is {props.zipCode}</Text>
-                    <Forecast {...forecastInfo} />
-                </View>
+                <Forecast {...forecastInfo} />
+                <Text style={styles.zipCodeText}>Zip Code is {props.zipCode}</Text>
+            </View>
         </ImageBackground>
         
     )
@@ -48,14 +50,14 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     zipCodeText:{
-        paddingTop: 30,
+        paddingTop: 15,
         color:'white',
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'center'
     },
     background:{
         width: '100%',
-        height: '50%',
+        height: '100%',
         backgroundColor: 'rgba(0, 0, 0, 0.2)'
     },
 })

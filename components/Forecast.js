@@ -4,7 +4,8 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Forecast(props){
     return (
         <View style={styles.onText}>
-            <Text style={styles.mainText}>{props.main}</Text>             
+            <Text style={styles.nameText}>{props.name}</Text>  
+            <Text style={styles.mainText}>{props.main}</Text>     
             <Text style={styles.tempText}>{props.temp} °C</Text> 
             <Text style={styles.descriptionText}>{props.description}</Text>                 
             <Text style={styles.humidityText}>Humidity {props.humidity} %</Text> 
@@ -29,13 +30,19 @@ const styles = StyleSheet.create({
         color:'white'
     },
     tempText:{
-        paddingTop: 20,
-        fontSize: 20,
-        color:'white'
+        paddingTop: 15,
+        fontSize: 30,
+        color:'white',
+        //borderRadius: ,
     },
     humidityText:{
-        paddingTop: 20,
-        fontSize: 20,
+        paddingTop: 15,
+        fontSize: 15,
+        color:'white'
+    },
+    nameText: {
+        paddingTop: 15,
+        fontSize: 30,
         color:'white'
     }
 })
