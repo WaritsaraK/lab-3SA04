@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '100%'
+        height: '200%'
     },
     zipCodeText:{
         paddingTop: 30,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     background:{
         width: '100%',
-        height: '35%',
+        height: '50%',
         backgroundColor: 'rgba(0, 0, 0, 0.2)'
     }
 })
