@@ -9,6 +9,7 @@ export default function Forecast(props){
             <Text style={styles.tempText}>{props.temp} °C</Text> 
             <Text style={styles.descriptionText}>{props.description}</Text>                 
             <Text style={styles.humidityText}>Humidity {props.humidity} %</Text> 
+            <Text style={styles.humidityText}>༄ speed {props.speed} MPH</Text>
         </View>
         
     )
@@ -33,7 +34,6 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         fontSize: 30,
         color:'white',
-        //borderRadius: ,
     },
     humidityText:{
         paddingTop: 15,
@@ -44,5 +44,6 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         fontSize: 30,
         color:'white'
+        
     }
 })

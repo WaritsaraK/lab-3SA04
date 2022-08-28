@@ -7,6 +7,7 @@ export default function Weather(props) {
         name: 'name',
         main: 'main',
         description: 'description',
+        speed: 0,
         humidity: 0,
         temp: 0
     })
@@ -22,7 +23,8 @@ export default function Weather(props) {
                         main: json.weather[0].main,                         
                         description: json.weather[0].description,                         
                         temp: json.main.temp,  
-                        humidity: json.main.humidity
+                        humidity: json.main.humidity,
+                        speed: json.wind.speed,
                     });                 
                 })                 
                 .catch((error) => {                     
