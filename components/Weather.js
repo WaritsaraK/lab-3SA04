@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import Forecast from "./Forecast";
+import DateTime from './DateTime';
 
 export default function Weather(props) {
+
+    const [data, setData] = useState({});
+
     const [ forecastInfo, setForecastInfo ] = useState({
         name: 'name',
         main: 'main',
@@ -36,6 +40,7 @@ export default function Weather(props) {
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
             <View style={styles.background}>
+                <DateTime current={data.current} timezone={data.timezone} lat={data.lat} lon={data.lon}/>
                 <Forecast {...forecastInfo} />
                 <Text style={styles.zipCodeText}>Zip Code is {props.zipCode}</Text>
             </View>
@@ -52,14 +57,15 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     zipCodeText:{
-        paddingTop: 15,
         color:'white',
         fontSize: 15,
-        textAlign: 'center'
+        textAlign: 'center',
+        height: '7%',
+        backgroundColor: 'rgba(0, 0, 30, 0.1)',
     },
     background:{
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.2)'
+        backgroundColor: 'rgba(250, 43, 250, 0.1)'
     },
 })

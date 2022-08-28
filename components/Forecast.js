@@ -9,7 +9,7 @@ export default function Forecast(props){
             <Text style={styles.tempText}>{props.temp} °C</Text> 
             <Text style={styles.descriptionText}>{props.description}</Text>                 
             <Text style={styles.humidityText}>Humidity {props.humidity} %</Text> 
-            <Text style={styles.humidityText}>༄ speed {props.speed} MPH</Text>
+            <Text style={styles.windText}>༄ speed {props.speed} MPH</Text>
         </View>
         
     )
@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
     onText:{
         flexDirection: 'column',
         alignItems: 'center',
+        height: '49%',
+        backgroundColor: 'rgba(0, 0, 30, 0.1)',
     },
     mainText:{
         paddingTop: 20,
@@ -43,7 +45,12 @@ const styles = StyleSheet.create({
     nameText: {
         paddingTop: 15,
         fontSize: 30,
+        //alignItems: 'center',
+        color:'white',
+    },
+    windText: {
+        paddingTop: 15,
+        fontSize: 15,
         color:'white'
-        
     }
 })

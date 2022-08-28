@@ -55,6 +55,6 @@ const styles = StyleSheet.create({
     },
     touch: {
         padding: 20,
-        backgroundColor: "#E3EBFD" ,
+        backgroundColor: "#FFF5ED" ,
     }
 })
